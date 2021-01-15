@@ -34,18 +34,21 @@ public class LoginActivity extends AppCompatActivity {
         usernameedt = findViewById(R.id.edtusername);
         passwordedt = findViewById(R.id.edtpassword);
         chk = findViewById(R.id.chkRememberMe);
+        fillData();
+        File file = new File(getFilesDir(), fileUsers);
+        //file.delete();
+
+    }
+
+    public void fillData(){
         mPreferences =getSharedPreferences(namefile,MODE_PRIVATE);
-        myeditor = mPreferences.edit();
         String storedusername = mPreferences.getString("username", "");
         String storedpassword = mPreferences.getString("password","");
         if(!storedusername.equals("") && !storedpassword.equals("")) {
             usernameedt.setText(storedusername);
             passwordedt.setText(storedpassword);
         }
-
-
     }
-
     public void login(View v){
         File file = new File(getFilesDir(), fileUsers);
         String username = usernameedt.getText().toString();
@@ -71,9 +74,9 @@ public class LoginActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             while(scan.hasNextLine()){
-                String line = scan.nextLine();
-                String[] data = line.split("###");
-                if(data[0].equals(username) && data[1].equals(password)){
+                String line1 = scan.nextLine();
+                String line2 = scan.nextLine();
+                if(line1.equals(username) && line2.equals(password)){
                     //Toast.makeText(this,"found", Toast.LENGTH_LONG).show();
                     found = 1;
                     if(chk.isChecked())
@@ -95,6 +98,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void saveData(String user, String pass){
+        myeditor = mPreferences.edit();
         myeditor.putString("username",user);
         myeditor.putString("password",pass);
         myeditor.apply();
@@ -113,6 +117,7 @@ public class LoginActivity extends AppCompatActivity {
             startActivityForResult(intent, 123);
             return true;
         case R.id.clear:
+            myeditor = mPreferences.edit();
             myeditor.clear();
             myeditor.apply();
             return true;

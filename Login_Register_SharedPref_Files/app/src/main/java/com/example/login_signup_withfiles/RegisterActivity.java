@@ -50,12 +50,10 @@ public class RegisterActivity extends AppCompatActivity {
         }
 
         if (checkUsernameExist(user) == false) {
-            File file = new File(getFilesDir(), fileUsers);
-            //Toast.makeText(this,"after check exists", Toast.LENGTH_LONG).show();
-
             try {
                 PrintStream ps = new PrintStream(openFileOutput(fileUsers, MODE_APPEND));
-                ps.println(user+"###"+pass1);
+                ps.println(user);
+                ps.println(pass1);
                 ps.close();
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -66,8 +64,32 @@ public class RegisterActivity extends AppCompatActivity {
             setResult(RESULT_OK, intent);
             finish();
         }
+        else{
+            AlertDialog.Builder alert = new AlertDialog.Builder(this);
+            alert.setMessage("Username already exists. Please choose another one");
+            alert.setTitle("Username Already Taken");
+            alert.setPositiveButton("OK",null);
+            alert.setCancelable(false);
+            alert.create().show();
+        }
     }
-        public boolean checkUsernameExist(String username){
-            return false;
+    public boolean checkUsernameExist(String username){
+        File file = new File(getFilesDir(), fileUsers);
+        Scanner scan = null;
+        if(file.exists()){
+            try {
+                scan = new Scanner(openFileInput(fileUsers));
+            }
+            catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            while(scan.hasNextLine()){
+                String line1 = scan.nextLine();
+                String line2 = scan.nextLine();
+                if(line1.equals(username))
+                    return true;
+            }
+        }
+        return false;
     }
 }

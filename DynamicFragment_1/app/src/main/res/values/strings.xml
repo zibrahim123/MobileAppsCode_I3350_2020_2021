@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">DynamicFragment_Replace</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="cars">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Honda</item>
+        <item>Toyota</item>
+        <item>Renault</item>
+        <item>Peugeot</item>
+    </string-array>
+</resources>

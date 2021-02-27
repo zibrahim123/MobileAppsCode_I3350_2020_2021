@@ -28,8 +28,6 @@ public class NetworkReceiver extends BroadcastReceiver {
     public void onReceive(Context context, Intent intent) {
         //if (intent.getAction().equals("android.net.conn.CONNECTIVITY_CHANGE")) {
             txt.setText(isNetworkAvailable());
-        //ConnectionDetector cd = new ConnectionDetector(ctx);
-        //txt.setText(cd.isConnectingToInternet());
         //}
     }
 
@@ -58,11 +56,7 @@ public class NetworkReceiver extends BroadcastReceiver {
                     else
                         result = "OTHER";
                 }
-                //else
-                //    return "networkCapabilities is NONE";
             }
-            //else
-            //    return "connectivityManager is NONE";
         }
 
         else {

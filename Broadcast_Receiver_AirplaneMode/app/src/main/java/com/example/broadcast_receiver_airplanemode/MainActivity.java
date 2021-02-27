@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onReceive(Context context, Intent intent) {
-            // assumes WordService is a registered service
-            //intent = new Intent(context, WordService.class);
-            //context.startService(intent);
+
             Toast.makeText(context,"The state of airplane mode has changed",Toast.LENGTH_LONG).show();
             String s = isAirplaneModeOn(context)==true?"ON":"OFF";
             txtv.setText("The aeroplane mode is passed to "+ s);

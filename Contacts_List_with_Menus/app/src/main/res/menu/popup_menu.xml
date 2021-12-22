@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/popup_forward"
+        android:icon="@drawable/icon_forward_foreground"
+        android:title="Forward" />
+    <item
+        android:id="@+id/popup_reply"
+        android:icon="@android:drawable/ic_menu_revert"
+        android:title="Reply" />
+    <item
+        android:id="@+id/popup_replyall"
+        android:title="Reply All" />
+</menu>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ExpensesTracker</string>
+    <string-array name="categories">
+        <item>Supermarket</item>
+        <item>Pharmacy</item>
+        <item>Restaurant</item>
+        <item>Other</item>
+    </string-array>
+    <string-array name="espensesList">
+        <item>100000 LBP - Supermarket (02/08/2021)</item>
+        <item>150000 LBP - Other (02/08/2021)</item>
+        <item>50000 LBP - Supermarket (10/07/2021)</item>
+        <item>120000 LBP - Pharmacy (10/07/2021)</item>
+        <item>225000 LBP - Other (10/07/2021)</item>
+        <item>125000 LBP - Restaurant (09/07/2021)</item>
+    </string-array>
+</resources>

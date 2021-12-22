@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/citem_edit_2"
+        android:icon="@android:drawable/ic_menu_edit"
+        android:title="Edit" />
+    <item
+        android:id="@+id/citem_share_2"
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="Share" />
+    <item
+        android:id="@+id/citem_delete_2"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="Delete" />
+</menu>
